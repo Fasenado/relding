@@ -1,0 +1,30 @@
+{
+  "name": "pixel-life",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "db": "\"C:\\Program Files\\MySQL\\MySQL Server 8.4\\bin\\mysqld.exe\" --datadir=\"C:\\Users\\Falon\\mysql-data\" --port=3306 --console",
+    "create-admin": "node node_modules/reldens/bin/reldens-commands.js createAdmin",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "reldens": "^4.0.0-beta.39.8"
+  },
+  "alias": {
+    "process": false
+  },
+  "targets": {
+    "main": false
+  },
+  "devDependencies": {
+    "@breezystack/lamejs": "^1.2.7",
+    "jimp": "^1.6.1",
+    "puppeteer": "^25.1.0"
+  }
+}

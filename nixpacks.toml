@@ -1,0 +1,11 @@
+# Build configuration for Railway (Nixpacks).
+# Pin Node to a version Reldens supports and install all deps for the first bundle.
+
+[phases.setup]
+nixPkgs = ["nodejs_20"]
+
+[phases.install]
+cmds = ["npm install"]
+
+[start]
+cmd = "node railway-start.js"

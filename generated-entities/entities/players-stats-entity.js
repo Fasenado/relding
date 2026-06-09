@@ -1,0 +1,63 @@
+/**
+ *
+ * Reldens - PlayersStatsEntity
+ *
+ */
+
+const { EntityProperties } = require('@reldens/storage');
+
+class PlayersStatsEntity extends EntityProperties
+{
+
+    static propertiesConfig(extraProps)
+    {
+        let properties = {
+            id: {
+                isId: true,
+                type: 'number',
+                isRequired: true,
+                dbType: 'int'
+            },
+            player_id: {
+                type: 'reference',
+                reference: 'players',
+                alias: 'related_players',
+                isRequired: true,
+                dbType: 'int'
+            },
+            stat_id: {
+                type: 'reference',
+                reference: 'stats',
+                alias: 'related_stats',
+                isRequired: true,
+                dbType: 'int'
+            },
+            base_value: {
+                type: 'number',
+                isRequired: true,
+                dbType: 'int'
+            },
+            value: {
+                type: 'number',
+                isRequired: true,
+                dbType: 'int'
+            }
+        };
+        let propertiesKeys = Object.keys(properties);
+        let showProperties = propertiesKeys;
+        let editProperties = [...propertiesKeys];
+        editProperties.splice(editProperties.indexOf('id'), 1);
+        let listProperties = propertiesKeys;
+        return {
+            showProperties,
+            editProperties,
+            listProperties,
+            filterProperties: listProperties,
+            properties,
+            ...extraProps
+        };
+    }
+
+}
+
+module.exports.PlayersStatsEntity = PlayersStatsEntity;
