@@ -6,7 +6,8 @@
 .env
 knexfile.js
 # local dev / test artifacts:
-/dist
 shot*.png
 server-out.log
 server-err.log
+build-prod.log
+deploy/_gql.json
